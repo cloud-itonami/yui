@@ -1,0 +1,4 @@
+{:kotoba.app/note
+ "yui は identification 層のみ。kotobase への evidence 書き込みは
+  CACAO capability (:cap/transact on own graph) で、最初の接続タスクで
+  kotoba.app.edn を実装する。このファイルは bundle 一貫性のために存在する。"}

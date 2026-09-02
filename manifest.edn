@@ -1,0 +1,17 @@
+{:manifest/id :yui
+ :manifest/name "yui 結 — five-domain participation & empowerment bot"
+ :manifest/owner-org "cloud-itonami"
+ :manifest/purpose
+ "Binding the five doors (murakumo/kotobase/isekai/kotoba/itonami) into one
+  measured participation funnel; ranking empowerment interventions through a
+  deterministic co-scientist loop grounded in an OASIS XMILE 1.0 model."
+ :manifest/planes
+ {:identification "this repo (co-scientist + SD model + evidence ledger)"
+  :publication "itonami.cloud bots status plane (same cloud.itonami.bots-status.v1 shape)"
+  :evidence "kotobase.net datom plane via CACAO self-issued identity"}
+ :manifest/authority
+ "actor signs with its own key; key-derived IPNS graph; no owner hand-off"
+ :manifest/economic-role
+ "NONE — yui is not an economic actor. See schema/yui.edn G6 and
+  ADR-2608291009 for the BOT/KUMO/YATA boundary."
+ :manifest/cadence "weekly iteration; observe → evaluate → decide → act → record"}

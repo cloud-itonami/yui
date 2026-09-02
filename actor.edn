@@ -1,0 +1,7 @@
+{:actor/id :yui
+ :actor/glyph "結"
+ :actor/tier :tier-b
+ :actor/manifest "manifest.edn"
+ :actor/schema "schema/yui.edn"
+ :actor/bundle ["data" "schema" "manifest.edn" "kotoba.app.edn"
+                "identity.edn" "dependencies.edn"]}

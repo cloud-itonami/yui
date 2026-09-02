@@ -1,0 +1,27 @@
+;; yui charter schema — the closed vocabularies the co-scientist review
+;; enforces. Data, not prose: the gate reads this file.
+{:yui/charter-version 1
+ :yui/mission
+ "Move people across the five-domain shared participation funnel and measure
+  honestly whether the moves worked. Empowerment = a participant gains a
+  higher-capability stage, not the system gains traffic."
+ :yui/funnel-stages
+ [:unaware :door-visitor :signed-up :active :contributor]
+ :yui/domains
+ ["murakumo.cloud" "kotobase.net" "isekai.network" "kotoba.cloud" "itonami.cloud"]
+ :yui/aligned-mechanisms
+ ["onboarding-fix" "empowerment-tooling" "retention" "reputation-loop"
+  "open-measurement"]
+ :yui/forbidden-mechanisms
+ ["engagement-maximizing" "ad-targeting" "dark-pattern-signup"
+  "vanity-traffic" "token-incentive-before-revenue" "extraction"]
+ :yui/gates
+ [{:gate :G-mechanism :rule "mechanism ∈ aligned-mechanisms"}
+  {:gate :G-empower :rule "candidate moves a stage up or reduces churn"}
+  {:gate :G-measured :rule "candidate names its SD parameter + constraining datum"}
+  {:gate :G-honesty :rule "unmeasured params run as labelled scenarios only"}
+  {:gate :G-leash :rule "identification only; no resource commitment"}
+  {:gate :G-no-fiat :rule "no minting, no value movement (ADR-2608291009)"}]
+ :yui/economic-boundary
+ "BOT/KUMO/YATA are ADR-2608291009's units. yui earns/spends nothing; its
+  margin formula (D5) is applied BY credits, not by yui."}

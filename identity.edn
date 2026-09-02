@@ -1,0 +1,5 @@
+{:identity/note
+ "秘密鍵はこのファイルに書かない。load-or-create 相当で初回生成 →
+  .yui/identity.edn (gitignore) へ永続。graph は鍵由来 IPNS。
+  CACAO 自己発行は kotoba-lang/org-chainagnostic-cacao に依存
+  (build-actor skill / ADR-2607268000)。実装は最初の CACAO 接続タスクで行う。"}

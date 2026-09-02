@@ -1,0 +1,7 @@
+{:dependencies/note
+ "実装フェーズで確定する。build-actor 規約に従い:
+  - io.github.kotoba-lang/org-chainagnostic-cacao (CACAO 自己発行)
+  - langchain-store (store 共通機構 — 自前 enc/dec を書かない)
+  - nbb 側 scenario runner は superproject 側 90-docs/system-dynamics/yui を
+    classpath で参照 (org-oasis-open-xmile + dynamics は west sibling)
+  third-party maven を top-level :deps に足さない (new-project-scaffold 規約)。"}
