@@ -1,6 +1,7 @@
 (ns yui.coscientist-test
   "Charter-gate and tournament tests for the yui co-scientist. Deterministic.
-   Run: nbb --classpath src:test --platform node test/yui/coscientist_test.cljs"
+   Run: nbb --classpath src:test test/yui/coscientist_test.cljs
+   (nbb has no --platform flag; passing one makes it try to open it as a file.)"
   (:require [clojure.test :refer [deftest is run-tests]]
             [yui.coscientist :as cs]))
 
