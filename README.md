@@ -15,6 +15,19 @@ contributors into reputation, reputation back into organic reach (the R loop
 of its system-dynamics model). It does not grow traffic; it ties stages
 together. Everything else in this README follows from that one verb.
 
+## Where the rest of it lives
+
+This repo is the charter plus one pure namespace. The model, both runners, and
+the design record are in the superproject `com-junkawasaki/root`:
+
+| | path (superproject) |
+|---|---|
+| design ADR (`accepted`) | `90-docs/adr/2609022000-yui-five-domain-participation-empowerment-bot.edn` |
+| XMILE model + runners | `90-docs/system-dynamics/yui/` |
+| fleet gates | `scripts/fleet-ci/gates/yui-{charter-gate,funnel-coverage}-check.cljs` |
+
+`docs/operator-quickstart.md` walks all of it end to end.
+
 ## Charter gates (G1–G6, enforced in code, not prose)
 
 | gate | rule | where enforced |
@@ -29,10 +42,23 @@ together. Everything else in this README follows from that one verb.
 ## What it runs
 
 ```bash
-bb test          # charter gates + deterministic tournament tests
-nbb 90-docs/system-dynamics/yui/yui-run.cljs        # (in superproject) the XMILE scenario run
-nbb 90-docs/system-dynamics/yui/yui-iteration.cljs  # co-scientist iteration
+# in this repo — charter gates + deterministic tournament tests
+nbb --classpath src:test test/yui/coscientist_test.cljs
+
+# in the superproject (com-junkawasaki/root) — the model and the loop live there
+SD_OUT=/tmp/yui-out nbb --classpath \
+  "90-docs/system-dynamics/nbb-shim:orgs/kotoba-lang/org-oasis-open-xmile/src:90-docs/system-dynamics/yui" \
+  90-docs/system-dynamics/yui/yui-run.cljs           # the XMILE scenario run
+nbb --classpath "90-docs/system-dynamics/yui" \
+  90-docs/system-dynamics/yui/yui-iteration.cljs     # co-scientist iteration
 ```
+
+**Walk `docs/operator-quickstart.md` instead of this block** — it carries the
+output each command actually produces, why `SD_OUT` is not optional, and which
+of the two co-scientist copies you just ran. Every command above was executed
+on 2026-09-05; the three that stood here before were `bb test` (this repo has
+no `bb.edn`, and bb is retired by ADR-2607173000) and two classpath-less `nbb`
+invocations, and all three exited non-zero.
 
 - The five-domain participation model: OASIS XMILE 1.0 via
   `kotoba-lang/org-oasis-open-xmile` (same engine as observatory-cadence).
