@@ -32,7 +32,7 @@ the design record are in the superproject `com-junkawasaki/root`:
 
 | gate | rule | where enforced |
 |---|---|---|
-| G1 G-mechanism | only `aligned-mechanisms` may enter the intervention catalog; engagement-maximizing / ad-targeting / extraction are UNREPRESENTABLE | `src/yui/coscientist.cljs` `review` |
+| G1 G-mechanism | only `aligned-mechanisms` may enter the intervention catalog; engagement-maximizing / ad-targeting / extraction are UNREPRESENTABLE | `src/yui/coscientist.kotoba` `review` |
 | G2 G-empower | every candidate must move a participant UP a funnel stage or reduce churn — raw traffic alone is not empowerment | review |
 | G3 G-measured | every candidate names the SD-model parameter it acts on + the real datum constraining it | review |
 | G4 G-honesty | unmeasured parameters may run as scenarios; their outputs are ranked, never forecast. Measured/assumed is labelled on every number | `90-docs/system-dynamics/yui/yui-run.cljs` |
@@ -43,7 +43,7 @@ the design record are in the superproject `com-junkawasaki/root`:
 
 ```bash
 # in this repo — charter gates + deterministic tournament tests
-nbb --classpath src:test test/yui/coscientist_test.cljs
+nbb --classpath src:test test/yui/coscientist_test.kotoba
 
 # in the superproject (com-junkawasaki/root) — the model and the loop live there
 SD_OUT=/tmp/yui-out nbb --classpath \

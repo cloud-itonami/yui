@@ -38,7 +38,7 @@ uses it and there is no `bb.edn`.
 From the repo root:
 
 ```bash
-nbb --classpath src:test test/yui/coscientist_test.cljs
+nbb --classpath src:test test/yui/coscientist_test.kotoba
 ```
 
 ```
@@ -151,7 +151,7 @@ measured constants change.
 
 | | ns | who runs it | who tests it |
 |---|---|---|---|
-| `src/yui/coscientist.cljs` (this repo) | `yui.coscientist` | nobody | §2 |
+| `src/yui/coscientist.kotoba` (this repo) | `yui.coscientist` | nobody | §2 |
 | `90-docs/system-dynamics/yui/yui_coscientist.cljs` | `yui-coscientist` | §4 | nobody |
 
 The namespaces differ, so the files are **not** interchangeable on a
@@ -216,7 +216,7 @@ Both exit 0 as of this walk. Two things to know about them:
 - **`yui-charter-gate` carries its own copy of the charter vocabulary inline**,
   because the fleet ships the tree of the repo named in the gate entry and
   this repo's tree is not that tree. So the gate and `schema/yui.edn` /
-  `src/yui/coscientist.cljs` can drift; what catches the drift is the gate's
+  `src/yui/coscientist.kotoba` can drift; what catches the drift is the gate's
   own third invariant (a mechanism that is both aligned and forbidden).
 
 Both entries are `:cd false`, which in `tick.cljs` means a green result does
