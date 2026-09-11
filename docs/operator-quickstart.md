@@ -38,7 +38,7 @@ uses it and there is no `bb.edn`.
 From the repo root:
 
 ```bash
-nbb --classpath src:test test/yui/coscientist_test.kotoba
+kbb --backend sci --classpath src:test test/yui/coscientist_test.kotoba
 ```
 
 ```
@@ -59,7 +59,7 @@ deterministic and gain-ordered.
 From the **superproject root** (`com-junkawasaki/root`), not from this repo:
 
 ```bash
-SD_OUT=/tmp/yui-out nbb --classpath \
+SD_OUT=/tmp/yui-out kbb --backend sci --classpath \
   "90-docs/system-dynamics/nbb-shim:orgs/kotoba-lang/org-oasis-open-xmile/src:90-docs/system-dynamics/yui" \
   90-docs/system-dynamics/yui/yui-run.cljs
 ```
@@ -103,7 +103,7 @@ superproject working tree every time anyone walks this quickstart. Point
 ## 4. Run the co-scientist iteration (superproject)
 
 ```bash
-nbb --classpath "90-docs/system-dynamics/yui" \
+kbb --backend sci --classpath "90-docs/system-dynamics/yui" \
   90-docs/system-dynamics/yui/yui-iteration.cljs
 ```
 
@@ -165,7 +165,7 @@ work that has not been done; it is recorded as a gap below, not fixed here.
 ## 6. Verify the design ADR parses
 
 ```bash
-nbb 90-docs/system-dynamics/yui/verify-adr.cljs
+kbb --backend sci 90-docs/system-dynamics/yui/verify-adr.cljk
 ```
 
 ```
@@ -188,8 +188,8 @@ Both live superproject-side, and you can run either one directly — pass the
 tree as the **first** argument, before any flags:
 
 ```bash
-nbb scripts/fleet-ci/gates/yui-charter-gate-check.cljs .
-nbb scripts/fleet-ci/gates/yui-funnel-coverage-check.cljs . --min 3
+kbb --backend sci scripts/fleet-ci/gates/yui-charter-gate-check.cljk .
+kbb --backend sci scripts/fleet-ci/gates/yui-funnel-coverage-check.cljk . --min 3
 ```
 
 ```

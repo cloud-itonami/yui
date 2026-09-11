@@ -43,20 +43,20 @@ the design record are in the superproject `com-junkawasaki/root`:
 
 ```bash
 # in this repo — charter gates + deterministic tournament tests
-nbb --classpath src:test test/yui/coscientist_test.kotoba
+kbb --backend sci --classpath src:test test/yui/coscientist_test.kotoba
 
 # in the superproject (com-junkawasaki/root) — the model and the loop live there
-SD_OUT=/tmp/yui-out nbb --classpath \
+SD_OUT=/tmp/yui-out kbb --backend sci --classpath \
   "90-docs/system-dynamics/nbb-shim:orgs/kotoba-lang/org-oasis-open-xmile/src:90-docs/system-dynamics/yui" \
   90-docs/system-dynamics/yui/yui-run.cljs           # the XMILE scenario run
-nbb --classpath "90-docs/system-dynamics/yui" \
+kbb --backend sci --classpath "90-docs/system-dynamics/yui" \
   90-docs/system-dynamics/yui/yui-iteration.cljs     # co-scientist iteration
 ```
 
 **Walk `docs/operator-quickstart.md` instead of this block** — it carries the
 output each command actually produces, why `SD_OUT` is not optional, and which
 of the two co-scientist copies you just ran. Every command above was executed
-on 2026-09-05; the three that stood here before were `bb test` (this repo has
+on 2026-09-05; the three that stood here before were `kbb -M:test` (this repo has
 no `bb.edn`, and bb is retired by ADR-2607173000) and two classpath-less `nbb`
 invocations, and all three exited non-zero.
 
